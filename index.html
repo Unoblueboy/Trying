@@ -20,32 +20,32 @@
 				element.addEventListener('click', fullscreen, false);
 
 				window.removeEventListener('deviceorientation', setOrientationControls, true);
-				}
-				window.addEventListener('deviceorientation', setOrientationControls, true);
+			}
+			window.addEventListener('deviceorientation', setOrientationControls, true);
 
-				function fullscreen() {
-					if (container.requestFullscreen) {
-				    	container.requestFullscreen();
-				  	} else if (container.msRequestFullscreen) {
-				    	container.msRequestFullscreen();
-				  	} else if (container.mozRequestFullScreen) {
-				    	container.mozRequestFullScreen();
-				  	} else if (container.webkitRequestFullscreen) {
-				    	container.webkitRequestFullscreen();
-					}
+			function fullscreen() {
+				if (container.requestFullscreen) {
+			    	container.requestFullscreen();
+			  	} else if (container.msRequestFullscreen) {
+			    	container.msRequestFullscreen();
+			  	} else if (container.mozRequestFullScreen) {
+			    	container.mozRequestFullScreen();
+			  	} else if (container.webkitRequestFullscreen) {
+			    	container.webkitRequestFullscreen();
 				}
+			}
 
-				controls = new THREE.OrbitControls(camera, element);
-				controls.target.set(
-					camera.position.x,
-					camera.position.y,
-					camera.position.z
-				);
-				controls.noPan = true;
-				controls.noZoom = true;
-				effect = new THREE.StereoEffect(renderer);
-				effect.setSize(width, height);
-				effect.render(scene, camera);
+			controls = new THREE.OrbitControls(camera, element);
+			controls.target.set(
+				camera.position.x,
+				camera.position.y,
+				camera.position.z
+			);
+			controls.noPan = true;
+			controls.noZoom = true;
+			effect = new THREE.StereoEffect(renderer);
+			effect.setSize(width, height);
+			effect.render(scene, camera);
 		</script>
 	</body>
 </html>
